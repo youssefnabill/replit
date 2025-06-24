@@ -5,3 +5,19 @@ channel = "stable-24_05"
 
 [deployment]
 run = ["sh", "-c", "go run"]
+
+[workflows]
+runButton = "Run"
+
+[[workflows.workflow]]
+name = "Run"
+author = 14753870
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "go mod tidy"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "go run cmd/main.go"
