@@ -1,9 +1,7 @@
-
 package service
 
 import (
 	"context"
-	"fmt"
 	"log"
 
 	"hexagonal-backend/internal/port/service"
